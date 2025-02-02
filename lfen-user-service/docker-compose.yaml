@@ -1,0 +1,25 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres_lfey
+    environment:
+      POSTGRES_DB: lfey
+      POSTGRES_USER: lfey_user
+      POSTGRES_PASSWORD: lfey_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - lfey_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lfey_user -d lfey"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  postgres_data:
+
+networks:
+  lfey_network:

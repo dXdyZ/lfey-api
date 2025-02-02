@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.NoSuchElementException;
 
 @Service
 public class UserService {
@@ -42,5 +41,15 @@ public class UserService {
     public void deleteUserByEmail(String email) throws UserNotFoundException {
         getUserByEmail(email);
         userRepository.deleteByEmail(email);
+    }
+
+    public User getUserById(Long id) throws UserNotFoundException {
+        return userRepository.findById(id).orElseThrow(
+                () -> new UserNotFoundException("User by id: " + id + " not found")
+        );
+    }
+
+    public Long getTokeForTest(String user) {
+        return null;
     }
 }

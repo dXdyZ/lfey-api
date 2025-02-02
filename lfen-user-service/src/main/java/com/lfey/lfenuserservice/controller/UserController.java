@@ -75,21 +75,21 @@ public class UserController {
         }
     }
 
-    @GetMapping()
+    @GetMapping
     public ResponseEntity<?> getUserByUsername(@RequestParam(name = "username") String username) {
         try {
             return ResponseEntity.ok(userService.getUsersByUsername(username));
         } catch (UserNotFoundException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
 
-    @GetMapping()
-    public ResponseEntity<?> getUserByEmail(@RequestParam(name = "email") String email) {
+    @GetMapping("/{id}")
+    public ResponseEntity<?> getUserById(@PathVariable("id") Long id) {
         try {
-            return ResponseEntity.ok(userService.getUserByEmail(email));
+            return ResponseEntity.ok(userService.getUserById(id));
         } catch (UserNotFoundException e) {
-            return ResponseEntity.badRequest().body(e.getMessage());
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
 }
