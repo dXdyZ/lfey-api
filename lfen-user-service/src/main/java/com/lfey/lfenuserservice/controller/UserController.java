@@ -92,4 +92,15 @@ public class UserController {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
     }
+
+    @PostMapping("/confirm/{email}/{code}")
+    public ResponseEntity<?> confirmCode(@PathVariable("email") String email,
+                                         @PathVariable("code") String code) {
+        try {
+            userService.confirmCode(email, code);
+            return ResponseEntity.ok().build();
+        } catch (RuntimeException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
 }

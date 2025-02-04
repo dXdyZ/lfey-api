@@ -9,8 +9,17 @@ spring:
   jpa:
     hibernate:
       ddl-auto: update
-
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: root
+    password: werpipl15
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
+fanout:
+  user_fanout: user_events_fanout
+queue:
+  messenger: messenger_queue
+  notification: not
