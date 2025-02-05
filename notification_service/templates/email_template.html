@@ -1,6 +1,74 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Код подтверждения</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+        .header {
+            background: #1a1a1a;
+            color: #ffffff;
+            padding: 20px;
+            font-size: 22px;
+            font-weight: bold;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+        }
+        .code {
+            font-size: 32px;
+            font-weight: bold;
+            color: #1a1a1a;
+            background: #f8f8f8;
+            padding: 15px 30px;
+            border-radius: 8px;
+            display: inline-block;
+            letter-spacing: 4px;
+            margin: 20px 0;
+            cursor: pointer;
+        }
+        .footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #777;
+            border-top: 1px solid #ddd;
+            padding-top: 15px;
+        }
+        .company-info {
+            font-size: 12px;
+            color: #555;
+            margin-top: 10px;
+        }
+    </style>
+</head>
 <body>
-    <p>Your verification code: <strong>{{ code }}</strong></p>
+    <div class="container">
+        <div class="header">LFEY Company</div>
+        <p>Уважаемый клиент,</p>
+        <p>Ваш код подтверждения:</p>
+        <div class="code" onclick="copyCode()">{{ code }}</div>
+        <p class="footer">Если вы не запрашивали этот код, проигнорируйте это письмо.</p>
+        <div class="company-info">
+            Компания "LFEY" | support@lfey.com<br>
+            Москва, ул. Бизнесменов, д. 10, офис 404
+        </div>
+    </div>
 </body>
 </html>

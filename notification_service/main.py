@@ -16,9 +16,6 @@ async def main():
         for _ in range(10)
     ]
 
-    # Подключаем всех SMTP-воркеров
-    # for sender in email_senders:
-    #     await sender.connect()
     await asyncio.gather(*(sender.connect() for sender in email_senders))
 
     # Инициализация RabbitMQConsumer
