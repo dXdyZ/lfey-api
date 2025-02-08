@@ -1,0 +1,13 @@
+# pydantic
+# fastapi
+#
+# upload_plugin
+#
+# download_plugin
+#
+# get_plugins
+#
+# get_plugin
+#
+# db
+#

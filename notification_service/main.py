@@ -5,6 +5,9 @@ from EmailSender import EmailSender
 
 
 async def main():
+
+
+
     # Создаем несколько SMTP-воркеров
     email_senders = [
         EmailSender(
@@ -13,11 +16,15 @@ async def main():
             smtp_user="AnotherSc@yandex.ru",
             smtp_password="cufzeqevxzjpwozi"
         )
+
         for _ in range(10)
     ]
 
     await asyncio.gather(*(sender.connect() for sender in email_senders))
 
+    # Запускаем keep_alive для каждого SMTP-воркера
+    for sender in email_senders:
+        asyncio.create_task(sender.keep_alive())  # <-- Запускаем keep_alive в фоне
     # Инициализация RabbitMQConsumer
     rabbitmq_consumer = RabbitMQConsumer(
         rabbitmq_url="amqp://root:werpipl15@bore.pub:5672/",
