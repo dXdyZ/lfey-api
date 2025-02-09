@@ -1,28 +1,38 @@
-from fastapi import APIRouter, HTTPException, Request, Depends
-from app.services.plugin_service import PluginService
+from fastapi import APIRouter, HTTPException
+from app.services.plugin_service import PluginService, PluginCreate
 import logging
 
-logging.basicConfig(level=logging.DEBUG)
+# Используем уже настроенный логгер
 logger = logging.getLogger(__name__)
-from pydantic import BaseModel
+
 router = APIRouter()
 
-
-class PluginCreate(BaseModel):
-    name: str
-    description: str
-    preview_url: str
-    archive_url: str
-
 @router.post("/upload_plugin")
-def upload_plugin(plugin: PluginCreate):
-    logger.debug(f"Received plugin data: {plugin}")
-    result = PluginService.upload_plugin(plugin.model_dump())
-    if "error" in result:
-        logger.error(f"Error uploading plugin: {result['error']}")
-        raise HTTPException(status_code=400, detail=result["error"])
-    return result
+async def upload_plugin(plugin: PluginCreate):
+    try:
+        logger.debug("Получен запрос на создание плагина")
 
+        # Преобразуем Pydantic модель в словарь
+        plugin_data = plugin.model_dump()
+        logger.debug(f"Преобразованные данные: {plugin_data}")
+
+        # Удаляем поле 'id', если оно есть (должно генерироваться автоматически)
+        if 'id' in plugin_data:
+            logger.warning("Получен ID от клиента, игнорируем")
+            del plugin_data['id']
+
+        # Вызываем сервис
+        result = PluginService.upload_plugin(plugin_data)
+
+        if "error" in result:
+            logger.error(f"Ошибка в сервисе: {result['error']}")
+            raise HTTPException(status_code=400, detail=result["error"])
+
+        return result
+
+    except Exception as e:
+        logger.error("Непредвиденная ошибка в роутере", exc_info=True)
+        raise HTTPException(status_code=500, detail="Internal server error")
 
 @router.get("/get_plugins")
 def get_plugins():
