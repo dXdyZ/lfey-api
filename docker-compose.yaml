@@ -31,17 +31,23 @@ services:
     ports:
       - "15672:15672"
       - "5672:5672"
-
   redis:
-
-    restart: no
+    image: redis:7.2-alpine
+    container_name: redis_dev
     networks:
       - lfey_network
-
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+#    environment:
+#      - REDIS_PASSWORD=devpassword  # можно убрать, если не нужен пароль
+    restart: unless-stopped
 
 volumes:
   postgres_data:
   rabbit:
+  redis_data:
 
 networks:
   lfey_network:

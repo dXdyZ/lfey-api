@@ -1,148 +1,245 @@
-2025-02-02T03:41:34.012+02:00  INFO 199401 --- [eureka-service] [restartedMain] c.l.e.EurekaServiceApplication           : Starting EurekaServiceApplication using Java 17.0.14 with PID 199401 (/home/another/Project/developering/lfey-api/eureka-service/build/classes/java/main started by another in /home/another/Project/developering/lfey-api/eureka-service)
-2025-02-02T03:41:34.016+02:00  INFO 199401 --- [eureka-service] [restartedMain] c.l.e.EurekaServiceApplication           : No active profile set, falling back to 1 default profile: "default"
-2025-02-02T03:41:34.081+02:00  INFO 199401 --- [eureka-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
-2025-02-02T03:41:34.082+02:00  INFO 199401 --- [eureka-service] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
-2025-02-02T03:41:35.778+02:00  INFO 199401 --- [eureka-service] [restartedMain] o.s.cloud.context.scope.GenericScope     : BeanFactory id=44c44ade-9953-3d9d-a15b-6024704129b2
-2025-02-02T03:41:36.375+02:00  INFO 199401 --- [eureka-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8761 (http)
-2025-02-02T03:41:36.396+02:00  INFO 199401 --- [eureka-service] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2025-02-02T03:41:36.396+02:00  INFO 199401 --- [eureka-service] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
-2025-02-02T03:41:36.471+02:00  INFO 199401 --- [eureka-service] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2025-02-02T03:41:36.472+02:00  INFO 199401 --- [eureka-service] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2389 ms
-2025-02-02T03:41:37.839+02:00  INFO 199401 --- [eureka-service] [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2025-02-02T03:41:37.841+02:00  INFO 199401 --- [eureka-service] [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2025-02-02T03:41:38.150+02:00  INFO 199401 --- [eureka-service] [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2025-02-02T03:41:38.150+02:00  INFO 199401 --- [eureka-service] [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2025-02-02T03:41:38.384+02:00  INFO 199401 --- [eureka-service] [restartedMain] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
-2025-02-02T03:41:39.377+02:00  INFO 199401 --- [eureka-service] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
-2025-02-02T03:41:39.446+02:00  WARN 199401 --- [eureka-service] [restartedMain] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2025-02-02T03:41:39.472+02:00  INFO 199401 --- [eureka-service] [restartedMain] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2025-02-02T03:41:39.506+02:00  INFO 199401 --- [eureka-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2025-02-02T03:41:39.506+02:00  INFO 199401 --- [eureka-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
-2025-02-02T03:41:39.509+02:00  INFO 199401 --- [eureka-service] [restartedMain] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1738460499508 with initial instances count: 0
-2025-02-02T03:41:39.572+02:00  INFO 199401 --- [eureka-service] [restartedMain] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
-2025-02-02T03:41:39.574+02:00 DEBUG 199401 --- [eureka-service] [restartedMain] c.n.discovery.endpoint.EndpointUtils     : The availability zone for the given region us-east-1 are [defaultZone]
-2025-02-02T03:41:39.575+02:00  INFO 199401 --- [eureka-service] [restartedMain] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8761/eureka/]
-2025-02-02T03:41:39.770+02:00  INFO 199401 --- [eureka-service] [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2025-02-02T03:41:39.771+02:00  INFO 199401 --- [eureka-service] [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2025-02-02T03:41:39.771+02:00  INFO 199401 --- [eureka-service] [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2025-02-02T03:41:39.771+02:00  INFO 199401 --- [eureka-service] [restartedMain] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2025-02-02T03:41:39.826+02:00  INFO 199401 --- [eureka-service] [restartedMain] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8761/eureka/
-2025-02-02T03:41:39.839+02:00  INFO 199401 --- [eureka-service] [restartedMain] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
-2025-02-02T03:41:39.840+02:00  INFO 199401 --- [eureka-service] [restartedMain] c.n.eureka.DefaultEurekaServerContext    : Initialized
-2025-02-02T03:41:39.852+02:00  INFO 199401 --- [eureka-service] [restartedMain] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2025-02-02T03:41:39.947+02:00  INFO 199401 --- [eureka-service] [restartedMain] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVICE with eureka with status UP
-2025-02-02T03:41:39.964+02:00  INFO 199401 --- [eureka-service] [Thread-15] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
-2025-02-02T03:41:39.965+02:00  INFO 199401 --- [eureka-service] [Thread-15] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
-2025-02-02T03:41:39.966+02:00  INFO 199401 --- [eureka-service] [Thread-15] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
-2025-02-02T03:41:39.966+02:00  INFO 199401 --- [eureka-service] [Thread-15] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
-2025-02-02T03:41:39.966+02:00  INFO 199401 --- [eureka-service] [Thread-15] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
-2025-02-02T03:41:39.970+02:00  INFO 199401 --- [eureka-service] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8761 (http) with context path '/'
-2025-02-02T03:41:39.970+02:00  INFO 199401 --- [eureka-service] [Thread-15] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
-2025-02-02T03:41:39.972+02:00  INFO 199401 --- [eureka-service] [restartedMain] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 8761
-2025-02-02T03:41:40.009+02:00  INFO 199401 --- [eureka-service] [restartedMain] c.l.e.EurekaServiceApplication           : Started EurekaServiceApplication in 6.801 seconds (process running for 8.054)
-2025-02-02T03:41:40.670+02:00  INFO 199401 --- [eureka-service] [RMI TCP Connection(1)-192.168.0.103] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2025-02-02T03:41:40.671+02:00  INFO 199401 --- [eureka-service] [RMI TCP Connection(1)-192.168.0.103] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2025-02-02T03:41:40.674+02:00  INFO 199401 --- [eureka-service] [RMI TCP Connection(1)-192.168.0.103] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2025-02-02T03:42:28.873+02:00 TRACE 199401 --- [eureka-service] [http-nio-8761-exec-2] c.n.d.util.DeserializerStringCache       :  (string) writing new interned value http://anotherPc:8080/ into APPLICATION_SCOPE cache scope
-2025-02-02T03:42:28.874+02:00 TRACE 199401 --- [eureka-service] [http-nio-8761-exec-2] c.n.d.util.DeserializerStringCache       :  (string) writing new interned value http://anotherPc:8080/actuator/info into APPLICATION_SCOPE cache scope
-2025-02-02T03:42:28.874+02:00 TRACE 199401 --- [eureka-service] [http-nio-8761-exec-2] c.n.d.util.DeserializerStringCache       :  (string) writing new interned value http://anotherPc:8080/actuator/health into APPLICATION_SCOPE cache scope
-2025-02-02T03:42:28.921+02:00 DEBUG 199401 --- [eureka-service] [http-nio-8761-exec-2] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 2
-2025-02-02T03:42:28.922+02:00 DEBUG 199401 --- [eureka-service] [http-nio-8761-exec-2] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 9
-2025-02-02T03:42:28.944+02:00  INFO 199401 --- [eureka-service] [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/anotherPc:user-service with status UP (replication=false)
-2025-02-02T03:42:29.694+02:00 TRACE 199401 --- [eureka-service] [http-nio-8761-exec-1] c.n.d.util.DeserializerStringCache       :  (string) writing new interned value http://anotherPc:8080/ into APPLICATION_SCOPE cache scope
-2025-02-02T03:42:29.695+02:00 TRACE 199401 --- [eureka-service] [http-nio-8761-exec-1] c.n.d.util.DeserializerStringCache       :  (string) writing new interned value http://anotherPc:8080/actuator/info into APPLICATION_SCOPE cache scope
-2025-02-02T03:42:29.695+02:00 TRACE 199401 --- [eureka-service] [http-nio-8761-exec-1] c.n.d.util.DeserializerStringCache       :  (string) writing new interned value http://anotherPc:8080/actuator/health into APPLICATION_SCOPE cache scope
-2025-02-02T03:42:29.696+02:00 DEBUG 199401 --- [eureka-service] [http-nio-8761-exec-1] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 1
-2025-02-02T03:42:29.696+02:00 DEBUG 199401 --- [eureka-service] [http-nio-8761-exec-1] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 9
-2025-02-02T03:42:29.707+02:00  INFO 199401 --- [eureka-service] [http-nio-8761-exec-1] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/anotherPc:user-service with status UP (replication=true)
-2025-02-02T03:42:29.733+02:00 DEBUG 199401 --- [eureka-service] [TaskBatchingWorker-target_localhost-0] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
-2025-02-02T03:42:29.734+02:00 DEBUG 199401 --- [eureka-service] [TaskBatchingWorker-target_localhost-0] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
-2025-02-02T03:42:39.967+02:00  INFO 199401 --- [eureka-service] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2025-02-02T03:42:58.762+02:00 TRACE 199401 --- [eureka-service] [http-nio-8761-exec-7] c.n.d.util.DeserializerStringCache       :  (string) writing new interned value http://anotherPc:8080/ into APPLICATION_SCOPE cache scope
-2025-02-02T03:42:58.762+02:00 TRACE 199401 --- [eureka-service] [http-nio-8761-exec-7] c.n.d.util.DeserializerStringCache       :  (string) writing new interned value http://anotherPc:8080/actuator/info into APPLICATION_SCOPE cache scope
-2025-02-02T03:42:58.765+02:00 TRACE 199401 --- [eureka-service] [http-nio-8761-exec-7] c.n.d.util.DeserializerStringCache       :  (string) writing new interned value http://anotherPc:8080/actuator/health into APPLICATION_SCOPE cache scope
-2025-02-02T03:42:58.766+02:00 DEBUG 199401 --- [eureka-service] [http-nio-8761-exec-7] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 2
-2025-02-02T03:42:58.766+02:00 DEBUG 199401 --- [eureka-service] [http-nio-8761-exec-7] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 9
-2025-02-02T03:42:58.767+02:00  INFO 199401 --- [eureka-service] [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/anotherPc:user-service with status DOWN (replication=false)
-2025-02-02T03:42:59.283+02:00 TRACE 199401 --- [eureka-service] [http-nio-8761-exec-10] c.n.d.util.DeserializerStringCache       :  (string) writing new interned value http://anotherPc:8080/ into APPLICATION_SCOPE cache scope
-2025-02-02T03:42:59.284+02:00 TRACE 199401 --- [eureka-service] [http-nio-8761-exec-10] c.n.d.util.DeserializerStringCache       :  (string) writing new interned value http://anotherPc:8080/actuator/info into APPLICATION_SCOPE cache scope
-2025-02-02T03:42:59.284+02:00 TRACE 199401 --- [eureka-service] [http-nio-8761-exec-10] c.n.d.util.DeserializerStringCache       :  (string) writing new interned value http://anotherPc:8080/actuator/health into APPLICATION_SCOPE cache scope
-2025-02-02T03:42:59.284+02:00 DEBUG 199401 --- [eureka-service] [http-nio-8761-exec-10] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 1
-2025-02-02T03:42:59.285+02:00 DEBUG 199401 --- [eureka-service] [http-nio-8761-exec-10] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 9
-2025-02-02T03:42:59.287+02:00  INFO 199401 --- [eureka-service] [http-nio-8761-exec-10] c.n.e.registry.AbstractInstanceRegistry  : Registered instance USER-SERVICE/anotherPc:user-service with status DOWN (replication=true)
-2025-02-02T03:42:59.292+02:00 DEBUG 199401 --- [eureka-service] [TaskBatchingWorker-target_localhost-0] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
-2025-02-02T03:42:59.293+02:00 DEBUG 199401 --- [eureka-service] [TaskBatchingWorker-target_localhost-0] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
-2025-02-02T03:43:01.791+02:00  INFO 199401 --- [eureka-service] [http-nio-8761-exec-2] c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance USER-SERVICE/anotherPc:user-service (replication=false)
-2025-02-02T03:43:02.306+02:00 DEBUG 199401 --- [eureka-service] [http-nio-8761-exec-6] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
-2025-02-02T03:43:02.306+02:00 DEBUG 199401 --- [eureka-service] [http-nio-8761-exec-6] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
-2025-02-02T03:43:02.306+02:00  WARN 199401 --- [eureka-service] [http-nio-8761-exec-6] c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: USER-SERVICE/anotherPc:user-service
-2025-02-02T03:43:02.307+02:00  INFO 199401 --- [eureka-service] [http-nio-8761-exec-6] c.n.eureka.resources.InstanceResource    : Not Found (Cancel): USER-SERVICE - anotherPc:user-service
-2025-02-02T03:43:02.310+02:00 DEBUG 199401 --- [eureka-service] [TaskBatchingWorker-target_localhost-1] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
-2025-02-02T03:43:02.311+02:00 DEBUG 199401 --- [eureka-service] [TaskBatchingWorker-target_localhost-1] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
-2025-02-02T03:43:02.311+02:00  WARN 199401 --- [eureka-service] [TaskBatchingWorker-target_localhost-1] c.n.eureka.cluster.ReplicationTask       : The replication of task USER-SERVICE/anotherPc:user-service:Cancel@localhost failed with response code 404
-2025-02-02T03:43:02.311+02:00  WARN 199401 --- [eureka-service] [TaskBatchingWorker-target_localhost-1] c.netflix.eureka.cluster.PeerEurekaNode  : USER-SERVICE/anotherPc:user-service:Cancel@localhost: missing entry.
-2025-02-02T03:43:39.967+02:00  INFO 199401 --- [eureka-service] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
-2025-02-02T03:43:42.409+02:00 TRACE 199401 --- [eureka-service] [http-nio-8761-exec-7] c.n.d.util.DeserializerStringCache       :  (string) writing new interned value http://anotherPc:8080/ into APPLICATION_SCOPE cache scope
-2025-02-02T03:43:42.409+02:00 TRACE 199401 --- [eureka-service] [http-nio-8761-exec-7] c.n.d.util.DeserializerStringCache       :  (string) writing new interned value http://anotherPc:8080/actuator/info into APPLICATION_SCOPE cache scope
-2025-02-02T03:43:42.410+02:00 TRACE 199401 --- [eureka-service] [http-nio-8761-exec-7] c.n.d.util.DeserializerStringCache       :  (string) writing new interned value http://anotherPc:8080/actuator/health into APPLICATION_SCOPE cache scope
-2025-02-02T03:43:42.410+02:00 DEBUG 199401 --- [eureka-service] [http-nio-8761-exec-7] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 2
-2025-02-02T03:43:42.411+02:00 DEBUG 199401 --- [eureka-service] [http-nio-8761-exec-7] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 9
-2025-02-02T03:43:42.412+02:00  INFO 199401 --- [eureka-service] [http-nio-8761-exec-7] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/anotherPc:gateway-service:8080 with status UP (replication=false)
-2025-02-02T03:43:42.928+02:00 TRACE 199401 --- [eureka-service] [http-nio-8761-exec-8] c.n.d.util.DeserializerStringCache       :  (string) writing new interned value http://anotherPc:8080/ into APPLICATION_SCOPE cache scope
-2025-02-02T03:43:42.928+02:00 TRACE 199401 --- [eureka-service] [http-nio-8761-exec-8] c.n.d.util.DeserializerStringCache       :  (string) writing new interned value http://anotherPc:8080/actuator/info into APPLICATION_SCOPE cache scope
-2025-02-02T03:43:42.928+02:00 TRACE 199401 --- [eureka-service] [http-nio-8761-exec-8] c.n.d.util.DeserializerStringCache       :  (string) writing new interned value http://anotherPc:8080/actuator/health into APPLICATION_SCOPE cache scope
-2025-02-02T03:43:42.929+02:00 DEBUG 199401 --- [eureka-service] [http-nio-8761-exec-8] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 1
-2025-02-02T03:43:42.929+02:00 DEBUG 199401 --- [eureka-service] [http-nio-8761-exec-8] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 9
-2025-02-02T03:43:42.930+02:00  INFO 199401 --- [eureka-service] [http-nio-8761-exec-8] c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/anotherPc:gateway-service:8080 with status UP (replication=true)
-2025-02-02T03:43:42.933+02:00 DEBUG 199401 --- [eureka-service] [TaskBatchingWorker-target_localhost-0] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
-2025-02-02T03:43:42.933+02:00 DEBUG 199401 --- [eureka-service] [TaskBatchingWorker-target_localhost-0] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
-2025-02-02T03:44:08.906+02:00  INFO 199401 --- [eureka-service] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-SERVICE with eureka with status DOWN
-2025-02-02T03:44:08.910+02:00  INFO 199401 --- [eureka-service] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
-2025-02-02T03:44:08.913+02:00  INFO 199401 --- [eureka-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
-2025-02-02T03:44:08.916+02:00  INFO 199401 --- [eureka-service] [SpringApplicationShutdownHook] o.s.c.n.e.server.EurekaServerBootstrap   : Shutting down Eureka Server..
-2025-02-02T03:44:08.916+02:00  INFO 199401 --- [eureka-service] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
-2025-02-02T03:44:08.922+02:00  INFO 199401 --- [eureka-service] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shut down
-2025-02-02T03:44:08.922+02:00  INFO 199401 --- [eureka-service] [SpringApplicationShutdownHook] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka Service is now shutdown...
-2025-02-02T03:44:08.923+02:00  INFO 199401 --- [eureka-service] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
-2025-02-02T03:44:08.923+02:00  INFO 199401 --- [eureka-service] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shut down
-2025-02-02T03:44:08.934+02:00  INFO 199401 --- [eureka-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2025-02-02T03:44:08.934+02:00  INFO 199401 --- [eureka-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
-2025-02-02T04:01:12.920+02:00  INFO 208320 --- [eureka-service] [Test worker] c.l.e.EurekaServiceApplicationTests      : Starting EurekaServiceApplicationTests using Java 17.0.14 with PID 208320 (started by another in /home/another/Project/developering/lfey-api/eureka-service)
-2025-02-02T04:01:13.409+02:00  INFO 208320 --- [eureka-service] [Test worker] c.l.e.EurekaServiceApplicationTests      : No active profile set, falling back to 1 default profile: "default"
-2025-02-02T04:01:15.009+02:00  INFO 208320 --- [eureka-service] [Test worker] o.s.cloud.context.scope.GenericScope     : BeanFactory id=b63bdfbc-956f-3bcd-b73d-0f142c484e69
-2025-02-02T04:01:15.718+02:00  INFO 208320 --- [eureka-service] [Test worker] o.s.v.b.OptionalValidatorFactoryBean     : Failed to set up a Bean Validation provider: jakarta.validation.NoProviderFoundException: Unable to create a Configuration, because no Jakarta Bean Validation provider could be found. Add a provider like Hibernate Validator (RI) to your classpath.
-2025-02-02T04:01:17.042+02:00  WARN 208320 --- [eureka-service] [Test worker] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2025-02-02T04:01:17.426+02:00  INFO 208320 --- [eureka-service] [Test worker] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
-2025-02-02T04:01:17.463+02:00  INFO 208320 --- [eureka-service] [Test worker] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
-2025-02-02T04:01:17.465+02:00  INFO 208320 --- [eureka-service] [Test worker] com.netflix.discovery.DiscoveryClient    : Client configured to neither register nor query for data.
-2025-02-02T04:01:17.469+02:00  INFO 208320 --- [eureka-service] [Test worker] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1738461677467 with initial instances count: 0
-2025-02-02T04:01:17.538+02:00  INFO 208320 --- [eureka-service] [Test worker] c.n.eureka.DefaultEurekaServerContext    : Initializing ...
-2025-02-02T04:01:17.540+02:00 DEBUG 208320 --- [eureka-service] [Test worker] c.n.discovery.endpoint.EndpointUtils     : The availability zone for the given region us-east-1 are [defaultZone]
-2025-02-02T04:01:17.541+02:00  INFO 208320 --- [eureka-service] [Test worker] c.n.eureka.cluster.PeerEurekaNodes       : Adding new peer nodes [http://localhost:8761/eureka/]
-2025-02-02T04:01:17.769+02:00  INFO 208320 --- [eureka-service] [Test worker] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON encoding codec LegacyJacksonJson
-2025-02-02T04:01:17.770+02:00  INFO 208320 --- [eureka-service] [Test worker] c.n.d.provider.DiscoveryJerseyProvider   : Using JSON decoding codec LegacyJacksonJson
-2025-02-02T04:01:17.770+02:00  INFO 208320 --- [eureka-service] [Test worker] c.n.d.provider.DiscoveryJerseyProvider   : Using XML encoding codec XStreamXml
-2025-02-02T04:01:17.770+02:00  INFO 208320 --- [eureka-service] [Test worker] c.n.d.provider.DiscoveryJerseyProvider   : Using XML decoding codec XStreamXml
-2025-02-02T04:01:17.872+02:00  INFO 208320 --- [eureka-service] [Test worker] c.n.eureka.cluster.PeerEurekaNodes       : Replica node URL:  http://localhost:8761/eureka/
-2025-02-02T04:01:17.885+02:00  INFO 208320 --- [eureka-service] [Test worker] c.n.e.registry.AbstractInstanceRegistry  : Finished initializing remote region registries. All known remote regions: []
-2025-02-02T04:01:17.885+02:00  INFO 208320 --- [eureka-service] [Test worker] c.n.eureka.DefaultEurekaServerContext    : Initialized
-2025-02-02T04:01:18.045+02:00  INFO 208320 --- [eureka-service] [Test worker] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2025-02-02T04:01:18.144+02:00  INFO 208320 --- [eureka-service] [Test worker] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application EUREKA-SERVICE with eureka with status UP
-2025-02-02T04:01:18.162+02:00  INFO 208320 --- [eureka-service] [Thread-12] o.s.c.n.e.server.EurekaServerBootstrap   : isAws returned false
-2025-02-02T04:01:18.163+02:00  INFO 208320 --- [eureka-service] [Thread-12] o.s.c.n.e.server.EurekaServerBootstrap   : Initialized server context
-2025-02-02T04:01:18.164+02:00  INFO 208320 --- [eureka-service] [Thread-12] c.n.e.r.PeerAwareInstanceRegistryImpl    : Got 1 instances from neighboring DS node
-2025-02-02T04:01:18.164+02:00  INFO 208320 --- [eureka-service] [Thread-12] c.n.e.r.PeerAwareInstanceRegistryImpl    : Renew threshold is: 1
-2025-02-02T04:01:18.165+02:00  INFO 208320 --- [eureka-service] [Thread-12] c.n.e.r.PeerAwareInstanceRegistryImpl    : Changing status to UP
-2025-02-02T04:01:18.169+02:00  INFO 208320 --- [eureka-service] [Thread-12] e.s.EurekaServerInitializerConfiguration : Started Eureka Server
-2025-02-02T04:01:18.190+02:00  INFO 208320 --- [eureka-service] [Test worker] c.l.e.EurekaServiceApplicationTests      : Started EurekaServiceApplicationTests in 5.937 seconds (process running for 8.094)
-2025-02-02T04:01:19.849+02:00  INFO 208320 --- [eureka-service] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-SERVICE with eureka with status DOWN
-2025-02-02T04:01:19.853+02:00  INFO 208320 --- [eureka-service] [SpringApplicationShutdownHook] o.s.c.n.e.server.EurekaServerBootstrap   : Shutting down Eureka Server..
-2025-02-02T04:01:19.853+02:00  INFO 208320 --- [eureka-service] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
-2025-02-02T04:01:19.854+02:00  INFO 208320 --- [eureka-service] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shut down
-2025-02-02T04:01:19.855+02:00  INFO 208320 --- [eureka-service] [SpringApplicationShutdownHook] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka Service is now shutdown...
-2025-02-02T04:01:19.856+02:00  INFO 208320 --- [eureka-service] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
-2025-02-02T04:01:19.856+02:00  INFO 208320 --- [eureka-service] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shut down
-2025-02-02T04:01:19.854+02:00 ERROR 208320 --- [eureka-service] [Eureka-Jersey3Client-Conn-Cleaner2] c.n.d.s.t.j.EurekaJersey3ClientImpl      : Cannot clean connections
+2025-02-09T00:00:04.454+02:00  INFO 14409 --- [eureka-service] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-02-09T00:00:09.064+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-7] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:00:09.064+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-7] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:00:09.067+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-6] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:00:09.067+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-6] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:00:39.076+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-9] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:00:39.076+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-9] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:00:39.079+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-6] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:00:39.079+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-6] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:01:04.454+02:00  INFO 14409 --- [eureka-service] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-02-09T00:01:09.082+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-2] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:01:09.082+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-2] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:01:09.087+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-6] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:01:09.087+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-6] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:01:39.093+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-5] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:01:39.094+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-5] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:01:39.097+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-6] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:01:39.097+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-6] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:02:04.454+02:00  INFO 14409 --- [eureka-service] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-02-09T00:02:09.104+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-8] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:02:09.104+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-8] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:02:09.107+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-6] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:02:09.108+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-6] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:02:39.115+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-1] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:02:39.115+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-1] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:02:39.118+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-6] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:02:39.119+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-6] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:03:04.455+02:00  INFO 14409 --- [eureka-service] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-02-09T00:03:09.124+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-4] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:03:09.124+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-4] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:03:09.128+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-6] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:03:09.128+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-6] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:03:39.132+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-6] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:03:39.133+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-6] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:03:39.136+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-6] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:03:39.136+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-6] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:04:04.455+02:00  INFO 14409 --- [eureka-service] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-02-09T00:04:09.142+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-10] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:04:09.143+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-10] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:04:09.146+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-10] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:04:09.147+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-10] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:04:39.150+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-3] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:04:39.150+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-3] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:04:39.153+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-6] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:04:39.154+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-6] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:05:04.455+02:00  INFO 14409 --- [eureka-service] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-02-09T00:05:09.161+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-7] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:05:09.162+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-7] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:05:09.165+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-12] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:05:09.166+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-12] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:05:39.169+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-9] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:05:39.169+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-9] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:05:39.172+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-8] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:05:39.173+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-8] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:06:04.314+02:00  INFO 14409 --- [eureka-service] [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 3
+2025-02-09T00:06:04.327+02:00 DEBUG 14409 --- [eureka-service] [Eureka-PeerNodesUpdater] c.n.discovery.endpoint.EndpointUtils     : The availability zone for the given region us-east-1 are [defaultZone]
+2025-02-09T00:06:04.455+02:00  INFO 14409 --- [eureka-service] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-02-09T00:06:09.177+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-2] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:06:09.177+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-2] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:06:09.180+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-12] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:06:09.180+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-12] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:06:39.183+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-5] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:06:39.183+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-5] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:06:39.186+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-0] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:06:39.186+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-0] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:07:04.455+02:00  INFO 14409 --- [eureka-service] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-02-09T00:07:09.196+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-8] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:07:09.196+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-8] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:07:09.201+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-0] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:07:09.201+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-0] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:07:39.206+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-1] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:07:39.492+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-1] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:07:39.412+02:00 ERROR 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-0] c.n.e.cluster.ReplicationTaskProcessor   : It seems to be a socket read timeout exception, it will retry later. if it continues to happen and some eureka node occupied all the cpu time, you should set property 'eureka.server.peer-node-read-timeout-ms' to a bigger value
+
+jakarta.ws.rs.ProcessingException: java.net.SocketTimeoutException: Read timed out
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:534) ~[jersey-apache-connector-3.1.10.jar:na]
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:300) ~[jersey-client-3.1.10.jar:na]
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$invoke$0(JerseyInvocation.java:674) ~[jersey-client-3.1.10.jar:na]
+	at org.glassfish.jersey.client.JerseyInvocation.call(JerseyInvocation.java:709) ~[jersey-client-3.1.10.jar:na]
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$runInScope$3(JerseyInvocation.java:703) ~[jersey-client-3.1.10.jar:na]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:292) ~[jersey-common-3.1.10.jar:na]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:274) ~[jersey-common-3.1.10.jar:na]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:205) ~[jersey-common-3.1.10.jar:na]
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:391) ~[jersey-common-3.1.10.jar:na]
+	at org.glassfish.jersey.client.JerseyInvocation.runInScope(JerseyInvocation.java:703) ~[jersey-client-3.1.10.jar:na]
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:673) ~[jersey-client-3.1.10.jar:na]
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:439) ~[jersey-client-3.1.10.jar:na]
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.post(JerseyInvocation.java:345) ~[jersey-client-3.1.10.jar:na]
+	at com.netflix.eureka.transport.Jersey3ReplicationClient.submitBatchUpdates(Jersey3ReplicationClient.java:116) ~[eureka-core-jersey3-2.0.4.jar:2.0.4]
+	at com.netflix.eureka.cluster.ReplicationTaskProcessor.process(ReplicationTaskProcessor.java:80) ~[eureka-core-2.0.4.jar:2.0.4]
+	at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run(TaskExecutors.java:178) ~[eureka-core-2.0.4.jar:2.0.4]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:288) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:314) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808) ~[na:na]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966) ~[na:na]
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:486) ~[jersey-apache-connector-3.1.10.jar:na]
+	... 16 common frames omitted
+
+2025-02-09T00:07:40.544+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-2] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:07:40.545+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-2] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:07:40.549+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-16] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:07:40.549+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-16] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:08:04.456+02:00  INFO 14409 --- [eureka-service] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-02-09T00:08:09.215+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-5] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:08:09.216+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-5] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:08:09.218+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-4] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:08:09.219+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-4] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:08:39.225+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-8] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:08:39.226+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-8] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:08:39.228+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-4] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:08:39.229+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-4] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:09:04.455+02:00  INFO 14409 --- [eureka-service] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-02-09T00:09:09.234+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-1] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:09:09.234+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-1] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:09:09.238+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-4] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:09:09.238+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-4] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:09:39.244+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-4] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:09:39.245+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-4] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:09:39.248+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-4] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:09:39.248+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-4] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:10:04.455+02:00  INFO 14409 --- [eureka-service] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-02-09T00:10:09.258+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-6] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:10:09.258+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-6] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:10:09.261+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-9] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:10:09.261+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-9] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:10:39.274+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-10] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:10:39.275+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-10] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:10:39.278+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-11] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:10:39.278+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-11] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:11:04.455+02:00  INFO 14409 --- [eureka-service] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-02-09T00:11:09.283+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-3] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:11:09.283+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-3] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:11:09.287+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-11] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:11:09.287+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-11] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:11:39.288+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-5] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:11:39.288+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-5] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:11:39.290+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-11] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:11:39.290+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-11] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:12:04.455+02:00  INFO 14409 --- [eureka-service] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-02-09T00:12:09.297+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-8] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:12:09.298+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-8] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:12:09.301+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-11] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:12:09.301+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-11] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:12:39.304+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-2] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:12:39.503+02:00 ERROR 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-11] c.n.e.cluster.ReplicationTaskProcessor   : It seems to be a socket read timeout exception, it will retry later. if it continues to happen and some eureka node occupied all the cpu time, you should set property 'eureka.server.peer-node-read-timeout-ms' to a bigger value
+
+jakarta.ws.rs.ProcessingException: java.net.SocketTimeoutException: Read timed out
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:534) ~[jersey-apache-connector-3.1.10.jar:na]
+	at org.glassfish.jersey.client.ClientRuntime.invoke(ClientRuntime.java:300) ~[jersey-client-3.1.10.jar:na]
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$invoke$0(JerseyInvocation.java:674) ~[jersey-client-3.1.10.jar:na]
+	at org.glassfish.jersey.client.JerseyInvocation.call(JerseyInvocation.java:709) ~[jersey-client-3.1.10.jar:na]
+	at org.glassfish.jersey.client.JerseyInvocation.lambda$runInScope$3(JerseyInvocation.java:703) ~[jersey-client-3.1.10.jar:na]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:292) ~[jersey-common-3.1.10.jar:na]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:274) ~[jersey-common-3.1.10.jar:na]
+	at org.glassfish.jersey.internal.Errors.process(Errors.java:205) ~[jersey-common-3.1.10.jar:na]
+	at org.glassfish.jersey.process.internal.RequestScope.runInScope(RequestScope.java:391) ~[jersey-common-3.1.10.jar:na]
+	at org.glassfish.jersey.client.JerseyInvocation.runInScope(JerseyInvocation.java:703) ~[jersey-client-3.1.10.jar:na]
+	at org.glassfish.jersey.client.JerseyInvocation.invoke(JerseyInvocation.java:673) ~[jersey-client-3.1.10.jar:na]
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.method(JerseyInvocation.java:439) ~[jersey-client-3.1.10.jar:na]
+	at org.glassfish.jersey.client.JerseyInvocation$Builder.post(JerseyInvocation.java:345) ~[jersey-client-3.1.10.jar:na]
+	at com.netflix.eureka.transport.Jersey3ReplicationClient.submitBatchUpdates(Jersey3ReplicationClient.java:116) ~[eureka-core-jersey3-2.0.4.jar:2.0.4]
+	at com.netflix.eureka.cluster.ReplicationTaskProcessor.process(ReplicationTaskProcessor.java:80) ~[eureka-core-2.0.4.jar:2.0.4]
+	at com.netflix.eureka.util.batcher.TaskExecutors$BatchWorkerRunnable.run(TaskExecutors.java:178) ~[eureka-core-2.0.4.jar:2.0.4]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:288) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:314) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355) ~[na:na]
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808) ~[na:na]
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966) ~[na:na]
+	at org.apache.http.impl.io.SessionInputBufferImpl.streamRead(SessionInputBufferImpl.java:137) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.io.SessionInputBufferImpl.fillBuffer(SessionInputBufferImpl.java:153) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.io.SessionInputBufferImpl.readLine(SessionInputBufferImpl.java:280) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:138) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.conn.DefaultHttpResponseParser.parseHead(DefaultHttpResponseParser.java:56) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.io.AbstractMessageParser.parse(AbstractMessageParser.java:259) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.DefaultBHttpClientConnection.receiveResponseHeader(DefaultBHttpClientConnection.java:163) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.conn.CPoolProxy.receiveResponseHeader(CPoolProxy.java:157) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.protocol.HttpRequestExecutor.doReceiveResponse(HttpRequestExecutor.java:273) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.protocol.HttpRequestExecutor.execute(HttpRequestExecutor.java:125) ~[httpcore-4.4.16.jar:4.4.16]
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:272) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:186) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:89) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:110) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:185) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:72) ~[httpclient-4.5.14.jar:4.5.14]
+	at org.glassfish.jersey.apache.connector.ApacheConnector.apply(ApacheConnector.java:486) ~[jersey-apache-connector-3.1.10.jar:na]
+	... 16 common frames omitted
+
+2025-02-09T00:12:39.577+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-2] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:12:40.593+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-3] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:12:40.594+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-3] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:12:40.596+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-16] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:12:40.597+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-16] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:13:04.455+02:00  INFO 14409 --- [eureka-service] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-02-09T00:13:09.314+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-5] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:13:09.314+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-5] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:13:09.318+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-17] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:13:09.318+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-17] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:13:39.320+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-8] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:13:39.320+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-8] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:13:39.323+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-17] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:13:39.323+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-17] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:14:04.455+02:00  INFO 14409 --- [eureka-service] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-02-09T00:14:09.335+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-2] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:14:09.336+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-2] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:14:09.338+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-14] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:14:09.339+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-14] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:14:39.628+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-4] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:14:39.680+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-4] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:14:39.683+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-19] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:14:39.683+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-19] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:15:04.510+02:00  INFO 14409 --- [eureka-service] [Eureka-EvictionTimer] c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-02-09T00:15:09.584+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-8] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:15:09.612+02:00 DEBUG 14409 --- [eureka-service] [http-nio-8761-exec-8] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:15:09.616+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-0] c.n.d.util.DeserializerStringCache       : clearing global-level cache with size 0
+2025-02-09T00:15:09.616+02:00 DEBUG 14409 --- [eureka-service] [TaskBatchingWorker-target_localhost-0] c.n.d.util.DeserializerStringCache       : clearing app-level serialization cache with size 0
+2025-02-09T00:15:11.326+02:00  INFO 14409 --- [eureka-service] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application EUREKA-SERVICE with eureka with status DOWN
+2025-02-09T00:15:11.368+02:00  INFO 14409 --- [eureka-service] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-02-09T00:15:11.401+02:00  INFO 14409 --- [eureka-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-02-09T00:15:11.417+02:00  INFO 14409 --- [eureka-service] [SpringApplicationShutdownHook] o.s.c.n.e.server.EurekaServerBootstrap   : Shutting down Eureka Server..
+2025-02-09T00:15:11.418+02:00  INFO 14409 --- [eureka-service] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
+2025-02-09T00:15:11.422+02:00 ERROR 14409 --- [eureka-service] [Eureka-Jersey3Client-Conn-Cleaner2] c.n.d.s.t.j.EurekaJersey3ClientImpl      : Cannot clean connections
 
 java.lang.IllegalStateException: Client instance has been closed.
 	at org.glassfish.jersey.internal.guava.Preconditions.checkState(Preconditions.java:169) ~[jersey-common-3.1.10.jar:na]
@@ -157,5 +254,9 @@ java.lang.IllegalStateException: Client instance has been closed.
 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
 	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
 
-2025-02-02T04:01:19.868+02:00  INFO 208320 --- [eureka-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
-2025-02-02T04:01:19.868+02:00  INFO 208320 --- [eureka-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-02-09T00:15:11.483+02:00  INFO 14409 --- [eureka-service] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shut down
+2025-02-09T00:15:11.484+02:00  INFO 14409 --- [eureka-service] [SpringApplicationShutdownHook] o.s.c.n.e.server.EurekaServerBootstrap   : Eureka Service is now shutdown...
+2025-02-09T00:15:11.488+02:00  INFO 14409 --- [eureka-service] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
+2025-02-09T00:15:11.488+02:00  INFO 14409 --- [eureka-service] [SpringApplicationShutdownHook] c.n.eureka.DefaultEurekaServerContext    : Shut down
+2025-02-09T00:15:11.508+02:00  INFO 14409 --- [eureka-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-02-09T00:15:11.509+02:00  INFO 14409 --- [eureka-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

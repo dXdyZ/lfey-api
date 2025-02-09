@@ -1,4 +1,4 @@
-package com.lfey.lfenuserservice.repository;
+package com.lfey.lfenuserservice.repository.jpa;
 
 import com.lfey.lfenuserservice.entity.User;
 import org.springframework.data.repository.CrudRepository;

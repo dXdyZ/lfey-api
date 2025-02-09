@@ -1,13 +1,21 @@
 package com.lfey.lfenuserservice.service;
 
+import com.lfey.lfenuserservice.dto.UserLog;
+import com.lfey.lfenuserservice.dto.UserRegister;
 import com.lfey.lfenuserservice.entity.User;
 import com.lfey.lfenuserservice.exception.DuplicateUserException;
+import com.lfey.lfenuserservice.exception.PasswordMatchesOldException;
 import com.lfey.lfenuserservice.exception.UserNotFoundException;
-import com.lfey.lfenuserservice.rabbit.UserEventPublisherService;
-import com.lfey.lfenuserservice.repository.UserRepository;
-import com.lfey.lfenuserservice.service.code.GenerationAndSendingCodeService;
-import com.lfey.lfenuserservice.service.code.VerificationCode;
+import com.lfey.lfenuserservice.repository.jpa.UserRepository;
+import com.lfey.lfenuserservice.service.auth.AuthService;
+import com.lfey.lfenuserservice.service.auth.JwtUtils;
+import com.lfey.lfenuserservice.service.verif_code.GenerationAndSendingCodeService;
+import com.lfey.lfenuserservice.service.verif_code.VerificationCode;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -15,35 +23,48 @@ import java.util.List;
 
 @Service
 public class UserService {
-    private final UserEventPublisherService userEventPublisherService;
+    private final AuthService authService;
     private final UserRepository userRepository;
     private final VerificationCode verificationCode;
     private final GenerationAndSendingCodeService generationAndSendingCodeService;
+    private final JwtUtils jwtUtils;
+    private final PasswordEncoder passwordEncoder;
 
     @Autowired
-    public UserService(UserEventPublisherService userEventPublisherService, UserRepository userRepository,
-                       VerificationCode verificationCode, GenerationAndSendingCodeService generationAndSendingService) {
-        this.userEventPublisherService = userEventPublisherService;
+    public UserService(AuthService authService, UserRepository userRepository, VerificationCode verificationCode,
+                       GenerationAndSendingCodeService generationAndSendingService, JwtUtils jwtUtils, PasswordEncoder passwordEncoder) {
+        this.authService = authService;
         this.userRepository = userRepository;
         this.verificationCode = verificationCode;
         this.generationAndSendingCodeService = generationAndSendingService;
+        this.jwtUtils = jwtUtils;
+        this.passwordEncoder = passwordEncoder;
     }
 
 
-    public void registerUser(User user) throws DuplicateUserException {
+    public void registerUser(UserRegister user) throws DuplicateUserException {
         if (userRepository.existsByEmail(user.getEmail())) {
-            throw new DuplicateUserException("User by email: " + user.getEmail() + " already exists");
+            throw new DuplicateUserException("User by body: " + user.getEmail() + " already exists");
         }
-        generationAndSendingCodeService.generationAndSending(user);
+        generationAndSendingCodeService.generationAndSending(User.builder()
+                        .email(user.getEmail())
+                        .username(user.getEmail())
+                        .password(user.getPassword())
+                .build());
     }
 
-    public void confirmCode(String email, String code) throws RuntimeException{
-        userRepository.save(verificationCode.confirmCode(email, code));
+    public String confirmCode(String email, String code) throws RuntimeException{
+        User user = userRepository.save(verificationCode.confirmCode(email, code));
+        return jwtUtils.generateToken(new org.springframework.security.core.userdetails.User(
+                user.getEmail(),
+                user.getPassword(),
+                List.of(new SimpleGrantedAuthority(user.getRole().name()))
+        ));
     }
 
     public User getUserByEmail(String email) throws UserNotFoundException {
         return userRepository.findByEmail(email).orElseThrow(
-                () -> new UserNotFoundException("User by email: " + email + " not found")
+                () -> new UsernameNotFoundException("User by body: " + email + " not found")
         );
     }
 
@@ -53,8 +74,8 @@ public class UserService {
         );
     }
 
+    // Добавить обработку несуществующего пользователя по email
     public void deleteUserByEmail(String email) throws UserNotFoundException {
-        getUserByEmail(email);
         userRepository.deleteByEmail(email);
     }
 
@@ -63,7 +84,6 @@ public class UserService {
                 () -> new UserNotFoundException("User by id: " + id + " not found")
         );
     }
-
 
     @Transactional
     public void updateUsername(String userEmail, String username) {
@@ -76,10 +96,13 @@ public class UserService {
     @Transactional
     public void updatePassword(String userEmail, String password) {
         User user = userRepository.findByEmail(userEmail).get();
-        user.setPassword(password);
+        if (!user.getPassword().matches(password)) {
+            user.setPassword(password);
+            generationAndSendingCodeService.generationAndSending(user);
+        } else throw new PasswordMatchesOldException("New password must not match the old password");
     }
 
-    public void saveUser(User user) {
-        userRepository.save(user);
+    public String loginUser(UserLog userLog) throws BadCredentialsException {
+        return authService.createToken(userLog);
     }
 }

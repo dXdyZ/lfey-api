@@ -1,7 +1,7 @@
-package com.lfey.lfenuserservice.service.code;
+package com.lfey.lfenuserservice.service.verif_code;
 
 import com.lfey.lfenuserservice.entity.PendingUser;
-import com.lfey.lfenuserservice.repository.PendingUserRepository;
+import com.lfey.lfenuserservice.repository.cache.PendingUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,7 +20,15 @@ public class PendingUserService {
         );
     }
 
+    public Boolean existsByEmail(String email) {
+        return pendingUserRepository.existsByEmail(email);
+    }
+
     public void savePendingUser(PendingUser pendingUser) {
         pendingUserRepository.save(pendingUser);
+    }
+
+    public void removePendingUser(String email) {
+        pendingUserRepository.deleteById(email);
     }
 }

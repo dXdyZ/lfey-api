@@ -6,6 +6,10 @@ spring:
     username: lfey_user
     password: lfey_password
     driver-class-name: org.postgresql.Driver
+  data:
+    redis:
+      host: localhost
+      port: 6379
   jpa:
     hibernate:
       ddl-auto: update
@@ -14,6 +18,15 @@ spring:
     port: 5672
     username: root
     password: werpipl15
+  cache:
+    type: redis
+    redis:
+      cache-null-values: false
+logging:
+  file:
+    name: user-service.log
+  level:
+    org.springframework: info
 eureka:
   client:
     service-url:
@@ -22,4 +35,7 @@ fanout:
   user_fanout: user_events_fanout
 queue:
   messenger: messenger_queue
-  notification: not
+  notification: email_verification
+token:
+  signing:
+    key: 32a8970858ce663ac2436dbdc7379f910733354be586b7a9751d465f411e3037edd76e3041e652aadbd675f473ad730275a7305f90f1dadd2e51848575af8efd

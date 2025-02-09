@@ -1,16 +1,16 @@
 package com.lfey.lfenuserservice.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.redis.core.RedisHash;
 
 import java.time.LocalDateTime;
 
 @Data
-@Entity
+@RedisHash(value = "RedisPendingUser", timeToLive = 1200) //TTL 20 min
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
