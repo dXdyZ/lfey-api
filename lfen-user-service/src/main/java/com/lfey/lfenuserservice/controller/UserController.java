@@ -1,11 +1,12 @@
 package com.lfey.lfenuserservice.controller;
 
-import com.lfey.lfenuserservice.dto.UserLog;
+import com.lfey.lfenuserservice.dto.UserAuth;
 import com.lfey.lfenuserservice.dto.UserRegister;
 import com.lfey.lfenuserservice.entity.User;
 import com.lfey.lfenuserservice.exception.DuplicateUserException;
 import com.lfey.lfenuserservice.exception.UserNotFoundException;
 import com.lfey.lfenuserservice.service.UserService;
+import io.swagger.v3.oas.annotations.Parameter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,42 +23,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    /**
-     * Регистрирует нового пользователя.
-     *
-     * <p>Этот метод принимает объект {@link User} в теле запроса и регистрирует его в системе.
-     * Если пользователь с таким body уже существует, выбрасывается исключение
-     * {@link DuplicateUserException}, и метод возвращает ответ с кодом 400 (Bad Request)
-     * и сообщением об ошибке.</p>
-     *
-     * <p>Пример запроса:</p>
-     * <pre>{@code
-     * POST /register
-     * {
-     *   "body": "user@example.com",
-     *   "password": "securePassword123",
-     *   "body": "user@example.com"
-     * }
-     * }</pre>
-     *
-     * <p>Пример успешного ответа:</p>
-     * <pre>{@code
-     * HTTP/1.1 201 Created
-     * }</pre>
-     *
-     * <p>Пример ответа с ошибкой:</p>
-     * <pre>{@code
-     * HTTP/1.1 400 Bad Request
-     * Пользователь с body user@example.com уже зарегистрирован.
-     * }</pre>
-     *
-     * @param user Объект пользователя для регистрации. Не может быть {@code null}.
-     * @return Ответ с кодом 201 (Created), если регистрация прошла успешно,
-     *         или ответ с кодом 400 (Bad Request) и сообщением об ошибке, если пользователь уже существует.
-     * @throws DuplicateUserException Если пользователь с таким body уже зарегистрирован.
-     * @see User
-     * @see DuplicateUserException
-     */
+
     @PostMapping("/register")
     public ResponseEntity<?> registerUser(@RequestBody UserRegister user) {
         try {
@@ -69,7 +35,8 @@ public class UserController {
     }
 
     @DeleteMapping("/delete/{email}")
-    public ResponseEntity<?> deleteUserByEmail(@PathVariable("email") String email) {
+    public ResponseEntity<?> deleteUserByEmail(@PathVariable("email")
+                                               @Parameter(description = "Электронная почта", example = "user@user.com") String email) {
         try {
             userService.deleteUserByEmail(email);
             return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -88,7 +55,8 @@ public class UserController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getUserById(@PathVariable("id") Long id) {
+    public ResponseEntity<?> getUserById(@PathVariable("id")
+                                         @Parameter(description = "Id пользователя", example = "1") Long id) {
         try {
             return ResponseEntity.ok(userService.getUserById(id));
         } catch (UserNotFoundException e) {
@@ -97,8 +65,9 @@ public class UserController {
     }
 
     @PostMapping("/confirm/{email}/{code}")
-    public ResponseEntity<?> confirmCode(@PathVariable("email") String email,
-                                         @PathVariable("code") String code) {
+    public ResponseEntity<?> confirmCode(@PathVariable("email")
+                                         @Parameter(description = "Mail пользователя который подтверждает действие", example = "user@user.com") String email,
+                                         @PathVariable("code") @Parameter(description = "Код отправленный на почту", example = "123456") String code) {
         try {
             return ResponseEntity.ok(userService.confirmCode(email, code));
         } catch (RuntimeException e) {
@@ -106,8 +75,8 @@ public class UserController {
         }
     }
 
-    @GetMapping("/login")
-    public ResponseEntity<?> login(@RequestBody UserLog userLog) {
+    @PostMapping("/login")
+    public ResponseEntity<?> login(@RequestBody UserAuth userLog) {
         try {
             return ResponseEntity.ok(userService.loginUser(userLog));
         } catch (BadCredentialsException e) {

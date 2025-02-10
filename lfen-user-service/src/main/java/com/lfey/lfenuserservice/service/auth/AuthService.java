@@ -1,12 +1,10 @@
 package com.lfey.lfenuserservice.service.auth;
 
-import com.lfey.lfenuserservice.dto.UserLog;
+import com.lfey.lfenuserservice.dto.UserAuth;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -22,13 +20,13 @@ public class AuthService {
         this.authenticationManager = authenticationManager;
     }
 
-    public String createToken(UserLog userLog) throws BadCredentialsException{
+    public String createToken(UserAuth userLog) throws BadCredentialsException{
         try {
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(userLog.getEmail(), userLog.getPassword()));
         } catch (BadCredentialsException e) {
             throw new BadCredentialsException("Invalid login or password");
         }
-        UserDetails userDetails = customUserDetailsService.loadUserByUsername(userLog.getEmail());
+        CustomUserDetails userDetails = (CustomUserDetails) customUserDetailsService.loadUserByUsername(userLog.getEmail());
         return jwtUtils.generateToken(userDetails);
     }
 }
