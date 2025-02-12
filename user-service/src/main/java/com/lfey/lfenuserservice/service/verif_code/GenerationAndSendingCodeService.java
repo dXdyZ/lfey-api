@@ -32,7 +32,6 @@ public class GenerationAndSendingCodeService {
     @Transactional
     public void generationAndSending(User user) {
         String code = String.format("%06d", new Random().nextInt(999999));
-        log.info("generate token from service: {}", code);
         PendingUser pendingUser = PendingUser.builder()
                 .code(code)
                 .email(user.getEmail())

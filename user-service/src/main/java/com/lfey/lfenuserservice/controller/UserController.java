@@ -1,10 +1,12 @@
 package com.lfey.lfenuserservice.controller;
 
+import com.lfey.lfenuserservice.dto.UpdatePassword;
 import com.lfey.lfenuserservice.dto.UserAuth;
 import com.lfey.lfenuserservice.dto.UserRegister;
-import com.lfey.lfenuserservice.entity.User;
 import com.lfey.lfenuserservice.exception.DuplicateUserException;
+import com.lfey.lfenuserservice.exception.PasswordMatchesOldException;
 import com.lfey.lfenuserservice.exception.UserNotFoundException;
+import com.lfey.lfenuserservice.exception.UsernameMatchesOldException;
 import com.lfey.lfenuserservice.service.UserService;
 import io.swagger.v3.oas.annotations.Parameter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,10 +47,19 @@ public class UserController {
         }
     }
 
-    @GetMapping
-    public ResponseEntity<?> getUserByUsername(@RequestParam(name = "username") String username) {
+    @GetMapping("/by-username/{username}")
+    public ResponseEntity<?> getUserByUsername(@PathVariable("username") String username) {
         try {
             return ResponseEntity.ok(userService.getUsersByUsername(username));
+        } catch (UserNotFoundException e) {
+            return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
+        }
+    }
+
+    @GetMapping("/by-email/{email}")
+    public ResponseEntity<?> getUserByEmail(@PathVariable("email") String email) {
+        try {
+            return ResponseEntity.ok(userService.getUserByEmail(email));
         } catch (UserNotFoundException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
         }
@@ -81,6 +92,30 @@ public class UserController {
             return ResponseEntity.ok(userService.loginUser(userLog));
         } catch (BadCredentialsException e) {
             return new ResponseEntity<>(e.getMessage(), HttpStatus.UNAUTHORIZED);
+        }
+    }
+
+    @PatchMapping("/me/username")
+    public ResponseEntity<?> editUsername(@RequestBody
+                                          @Parameter(description = "Имя пользователя на которое нужно сменить") String username,
+                                          @RequestHeader("X-User-Email")
+                                          @Parameter(description = "Email пользователя из токена") String userEmail) {
+        try {
+            return ResponseEntity.ok(userService.updateUsername(userEmail, username));
+        } catch (UsernameMatchesOldException | UserNotFoundException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
+
+    @PatchMapping("/me/password")
+    public ResponseEntity<?> editPassword(@RequestHeader("X-User-Email")
+                                          @Parameter(description = "Email пользователя из токена") String userEmail,
+                                          @RequestBody UpdatePassword updatePassword) {
+        try {
+            userService.updatePassword(userEmail, updatePassword);
+            return ResponseEntity.ok().build();
+        } catch (PasswordMatchesOldException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
 }
