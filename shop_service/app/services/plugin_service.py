@@ -1,41 +1,43 @@
 from app.database import supabase
 from pydantic import BaseModel
 import logging
+import aiofiles
+from app.services.storage_service import StorageService
 
-# Используем уже настроенный логгер
 logger = logging.getLogger(__name__)
+storage = StorageService()
 
 class PluginCreate(BaseModel):
     plugin_name: str
     plugin_description: str
-    plugin_preview: str
     plugin_archive: str
+
 
 class PluginService:
     @staticmethod
-    def upload_plugin(plugin: dict):
+    async def upload_file_to_storage(file_path):
+        response = storage.upload_file(file_path)
+        if response == "True":
+            return "True"
+        else:
+            return response
+
+    @staticmethod
+    async def upload_plugin(plugin: dict):
+        """Сохраняет информацию о плагине в базе данных"""
         try:
             logger.debug("Начало вставки плагина")
             logger.debug(f"Данные для вставки: {plugin}")
 
-            # Проверяем наличие обязательных полей
-            required_fields = ["plugin_name", "plugin_description", "plugin_preview", "plugin_archive"]
-            for field in required_fields:
-                if field not in plugin:
-                    logger.error(f"Отсутствует обязательное поле: {field}")
-                    return {"error": f"Missing required field: {field}"}
-
-            # Пытаемся выполнить запрос
-            logger.debug("Выполнение запроса к Supabase...")
+            # Выполняем вставку данных
             response = supabase.table("plugins").insert(plugin).execute()
-            logger.debug(f"Ответ Supabase: {response}")
 
-            if not response.data:
-                logger.error("Пустой ответ от Supabase")
-                return {"error": "Empty response from database"}
-
-            logger.info(f"Успешно создан плагин: {response.data[0]}")
-            return response.data[0]
+            # Проверяем, есть ли ошибки в ответе
+            if hasattr(response, "data") and response.data:
+                return response.data[0]  # Возвращаем данные
+            else:
+                logger.error(f"Ошибка Supabase: {response}")
+                return {"error": "Не удалось вставить данные в базу"}
 
         except Exception as e:
             logger.error("Ошибка при вставке плагина", exc_info=True)
@@ -55,7 +57,4 @@ class PluginService:
 
     @staticmethod
     def download_plugin(plugin_id: int):
-        response = supabase.table("plugins").select("plugin_archive").eq("id", plugin_id).execute()
-        if response.data and response.data[0].get("plugin_archive"):
-            return response.data[0]["plugin_archive"]
-        return {"error": "Плагин не найден или отсутствует архив"}
+        response = storage.download_file(plugin_id)

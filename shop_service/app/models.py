@@ -5,5 +5,4 @@ class PluginBase(BaseModel):
     description: str
 
 class PluginCreate(PluginBase):
-    preview_url: str
     archive_url: str
